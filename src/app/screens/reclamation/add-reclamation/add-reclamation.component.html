@@ -1,0 +1,20 @@
+<div>
+  <h2 class="login-title">Ajouter une Réclamation</h2>
+  <mat-card class="form-card">
+    <div class="example-container">
+      <form #reclamation="ngForm" [formGroup]="addReclamationForm" (ngSubmit)="onSubmit(reclamation.value)">
+        <mat-form-field appearance="fill" class="fullWidth">
+          <mat-label>Tire du reclamation</mat-label>
+          <input matInput type="text" formControlName="titre" name="titre" id="titre" />
+        </mat-form-field>
+
+        <p class="message-user">{{messageUser}}</p>
+        <angular-editor  [config]="config"
+          type="text" formControlName="contenue" name="contenue" id="contenue" ></angular-editor>
+        <button mat-flat-button color="primary">Ajouter</button>
+      </form>
+    </div>
+  </mat-card>
+
+
+</div>

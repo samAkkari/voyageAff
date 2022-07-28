@@ -1,0 +1,39 @@
+<mat-card class="form-card">
+  <div class="example-container">
+    <form
+      #Signup="ngForm"
+      [formGroup]="updateReclamationForm"
+      (ngSubmit)="onSubmit(Signup.value)"
+    >
+
+
+
+      <mat-form-field appearance="fill" class="fullWidth">
+        <mat-label>Titre</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="titre"
+          name="titre"
+          id="titre"
+        />
+      </mat-form-field>
+
+      <angular-editor  [config]="config"
+                       type="text" formControlName="contenue" name="contenue" id="contenue" ></angular-editor>
+
+
+<div style="padding-left: 500px">
+
+      <button mat-flat-button color="primary"  [disabled]="modif" >
+        <mat-icon>edit</mat-icon>Modifier</button>
+
+      <button mat-raised-button color="warn" style="background-color: darkblue"
+              (click)="handleRedirectToList()">
+        <mat-icon>keyboard_return</mat-icon>
+        Retour
+      </button>
+</div>
+    </form>
+  </div>
+</mat-card>
